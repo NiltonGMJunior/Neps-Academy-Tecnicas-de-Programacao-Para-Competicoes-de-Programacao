@@ -8,7 +8,6 @@ unsigned int pesos[MAX_N], prot[MAX_N];
 // Tabela de memoização, com o peso máximo para cada pedaço e o restante a ser ingerido
 long long int tab[MAX_N][MAX_N];
 
-
 unsigned short int max_proteina(unsigned short int n, unsigned short int ind, unsigned short int p)
 {
     // Caso não hajam mais pedaços à verificar ou não aguenta mais comer
