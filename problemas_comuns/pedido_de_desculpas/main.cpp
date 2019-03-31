@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 
 // Comprimento máximo do cartão
-#define MAX_C 1000
+#define MAX_C 1001
 
 // Máximo número de frases coletadas
-#define MAX_F 50
+#define MAX_F 51
 
 // Número de caracteres por frase (8 <= N <= 200)
 unsigned short int caracteres[MAX_F];
@@ -43,24 +43,27 @@ unsigned short int max_desculpas(unsigned short int f, unsigned short int ind, u
 
 int main()
 {
-    // Teste atual
-    unsigned short int teste = 0;
+    // Teste atual (long long pois a quantidade máxima de testes não é especificada)
+    unsigned long long int teste = 0;
     
-    // Número de caracteres no cartão e número de frases a serem lidas
+    // Número de caracteres no cartão e número de frases a serem lidas (8 <= c <= 1000) (1 <= f <= 50)
     unsigned short int c, f;
 
+    // Loop infinito
     while (true)
     {
         // Lê o máximo de caracteres no cartão e o número de possíveis frases
         std::cin >> c >> f;
+        
         // Se ambos forem zero, termina o programa
         if (c == 0 && f == 0) 
             break;
+
         // Incrementa o teste (necessário apenas para o padrão de saída)
         teste++;
 
         // Reseta a tabela de memoização com os valores em -1
-        memset(tab, -1, sizeof(tab));
+        memset(tab, -1, sizeof(tab[0][0]) * MAX_F * MAX_C);
 
         // Preenche os vetores de caracteres e números de desculpas por frase
         for (unsigned short int iii = 0; iii < f; ++iii)

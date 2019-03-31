@@ -1,6 +1,6 @@
 #include <bits/stdc++.h> 
 
-#define MAX_N 2000
+#define MAX_N 2001
 
 // Vetores com os pesos e quantidades de proteína em cada pedaço
 unsigned int pesos[MAX_N], prot[MAX_N];
@@ -12,7 +12,6 @@ unsigned short int max_proteina(unsigned short int n, unsigned short int ind, un
 {
     // Caso não hajam mais pedaços à verificar ou não aguenta mais comer
     if (ind == n || p == 0) return tab[ind][p] = 0;
-
 
     // Valor já identificado na tabela
     if (tab[ind][p] != -1) return tab[ind][p];
